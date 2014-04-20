@@ -6,6 +6,46 @@
 <script type="text/javascript">
 </script>
  <script>
+function blur(imageObj, context, passes) {
+var destX = 10;
+var destY = 10;
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+var i, x, y;
+  passes = passes || 4;
+  context.globalAlpha = 0.125;
+  // Loop for each blur pass.
+  for (i = 1; i <= passes; i++) {
+    for (y = -1; y < 2; y++) {
+      for (x = -1; x < 2; x++) {
+          context.drawImage(imageObj, x, y);
+      }
+    }
+  }
+  context.globalAlpha = 1.0;
+// overwrite original image
+context.putImageData(imageData, destX, destY);
+}
+function negative(imageObj, context, canvas){
+var destX = 10;
+var destY = 10;
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+
+    context.drawImage(imageObj, destX, destY);
+  
+    var imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+    var pixels = imageData.data;
+    for (var i = 0; i < pixels.length; i += 4) {
+        pixels[i]   = 255 - pixels[i];   // red
+        pixels[i+1] = 255 - pixels[i+1]; // green
+        pixels[i+2] = 255 - pixels[i+2]; // blue
+        // i+3 is alpha (the fourth element)
+    }
+  
+    // overwrite original image
+    context.putImageData(imageData, destX, destY);
+} 
 	 function grayscale(imageObj) {
 	      var x = 10;
           var y = 10;
@@ -43,5 +83,7 @@
  </td></tr></table>
  <button onclick="imageObj.onload = function() {drawImage(this);};">G.Awal</button>
  <button onclick="imageObj.onload = function() {grayscale(this);};">Greyscale</button>
-  </body>
+  <button onclick="imageObj.onload = function() {negative(this);};">Negative</button>
+  <button onclick="imageObj.onload = function() {blur(this);};">Blur</button>
+</body>
 </html>
