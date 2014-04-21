@@ -1,11 +1,11 @@
 <!doctype html>
 <html>
+<title>InstaPIC</title>
 <head>
 <script type="text/javascript" src="qrc:///js/jquery.js"></script>
 <script type="text/javascript" src="qrc:///js/ign.js"></script>
-<script type="text/javascript">
-</script>
- <script>
+<script type="text/javascript"></script>
+<script>
 	 function grayscale(imageObj) {
 	      var x = 10;
           var y = 10;
@@ -35,21 +35,33 @@
 		context.drawImage(imageObj, x, y);
 	}
       var imageObj = new Image();
-      imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg';
+      imageObj.src='http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg';
     </script>
 </head>
 <body>
 <center><h1>InstaPIC</h1></center>
 <center>
- <table border=1>
-	 <tr>
-		 <td colspan="2"><canvas id="myCanvas" width="458" height="315"></canvas></td>
-	 </tr>
- <tr>
-	 <td><button onclick="imageObj.onload = function() {drawImage(this);};">G.Awal</button></td>
-	 <td><button onclick="imageObj.onload = function() {grayscale(this);};">Greyscale</button></td>
- </tr>
- </table>
- </center>
-  </body>
+<table border="1">
+	<tr>
+		<td colspan="2" rowspan="5"><canvas id="myCanvas" width="458" height="315"></canvas></td>
+	</tr>
+	<tr>
+		<td><input type="submit" value="tombol1"/></td>
+	</tr>
+	<tr>
+		<td><input type="submit" value="tombol2"/></td>
+	</tr>
+	<tr>
+		<td><input type="submit" value="tombol3"/></td>
+	</tr>
+	<tr>
+		<td><input type="submit" value="tombol4"/></td>
+	</tr>
+	<tr>
+		<td><button onclick="imageObj.onload = function() {drawImage(this);};">G.Awal</button></td>
+		<td><button onclick="imageObj.onload = function() {grayscale(this);};">Greyscale</button></td>
+	</tr>
+</table>
+</center>
+</body>
 </html>
