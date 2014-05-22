@@ -3,9 +3,9 @@
 <head>
 <script type="text/javascript" src="qrc:///js/jquery.js"></script>
 <script type="text/javascript" src="qrc:///js/ign.js"></script>
-<script type="text/javascript">
-</script>
- <script>
+<script type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<script>
 function blur(imageObj, context, passes) {
 var destX = 10;
 var destY = 10;
@@ -76,14 +76,17 @@ context.drawImage(imageObj, x, y);
 }
       var imageObj = new Image();
       imageObj.src = 'http://www.html5canvastutorials.com/demos/assets/darth-vader.jpg';
-    </script>
+</script>
 </head>
 <body>
+<header>
+ <h5>InstaPIC</h5>
+</header>
  <table style="border:2px solid #d3d3d3"><tr><td><canvas id="myCanvas" width="458" height="315"></canvas>
  </td></tr></table>
- <button onclick="imageObj.onload = function() {drawImage(this);};">G.Awal</button>
- <button onclick="imageObj.onload = function() {grayscale(this);};">Greyscale</button>
- <button onclick="imageObj.onload = function() {negative(this);};">Negative</button>
- <button onclick="imageObj.onload = function() {blur(this);};">Blur</button>
+ <a class="btn" onclick="imageObj.onload = function() {drawImage(this);};">G.Awal</button>
+ <a class="btn" onclick="imageObj.onload = function() {grayscale(this);};">Greyscale</button>
+ <a class="btn" onclick="imageObj.onload = function() {negative(this);};">Negative</button>
+ <a class="btn" onclick="imageObj.onload = function() {blur(this);};">Blur</button>
 </body>
 </html>
