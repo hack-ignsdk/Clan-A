@@ -38,6 +38,7 @@ a.btn {
 
 a.btn:hover {
 	background: #000;
+	cursor:pointer;
 }
 
 a {
